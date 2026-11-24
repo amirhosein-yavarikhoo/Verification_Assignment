@@ -1,2 +1,8 @@
 ID ,Design requirement ,Coverage         ,Verification Criteria ,Priority        ,Type            ,Comment
- 0 ,Description        ,cover group name ,Checker/Ref Model/... ,High/Medium/Low ,Design/Protocol ,Additional Info
+ 0 ,DR00               ,cg_reset         ,reset_checker ,High ,Design ,apb control register check: the enable and mode should be zero and the priority register should also be zero. (after reset)
+ 1, DR00               ,cg_reset         ,reset_checker ,High ,Protocol, ssdt valid cannot be high during reset.
+ 2, DR00               ,cg_reset         ,reset_checker ,High, Design, CRC payload should be zero.
+ 3, DR04               ,....             ,              ,High,Design, we should be able to write to the mode and change priorities with APB.
+ 4, DR05               ,                 ,              ,High,Design, after writing to the apb control register we execute couple of transaction then change the configuration and do the transactions again to see if the change actually happens
+ 5, DR06               ,                 ,              ,Medium,Design, we configure the apb control register both when memory is enabled and disabled
+ 6, DR07               ,                 ,              ,
